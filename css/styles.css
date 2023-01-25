@@ -65,11 +65,10 @@ li {
     margin: 2rem 2rem 2rem 2rem;
 }
 
-a,
+a:link,
 a:visited {
     text-decoration: none;
     color: white;
-
 }
 
 /* Estilos para logo, imágenes e íconos */
@@ -198,4 +197,6 @@ textarea {
 
 form input {
     height: 20.8px;
+    font-family: NeueMachina-Regular;
+
 }

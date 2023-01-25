@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Fuentes */
+
+@font-face {
+    font-family: NeueMachina-Light;
+    src: url(../assets/fonts/NeueMachina-Light.otf);
+}
+
+@font-face {
+    font-family: NeueMachina-Regular;
+    src: url(../assets/fonts/NeueMachina-Regular.otf);
+}
+
+@font-face {
+    font-family: NeueMachina-Ultrabold;
+    src: url(../assets/fonts/NeueMachina-Ultrabold.otf);
+}
+
+/* Estilos para contenedores principales */
+
+#grilla {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5rem auto 40px;
+    grid-template-areas: "header nav" "main main" "footer footer";
+    background-image: url(../assets/images/background1.jpg);
+    background-size: cover;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+    font-family: NeueMachina-Ultrabold;
+    color: #5686c9;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+
+/* Estilos para el menú */
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+li {
+    list-style: none;
+    margin: 2rem 2rem 2rem 2rem;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: white;
+
+}
+
+/* Estilos para logo, imágenes e íconos */
+
+#logo {
+    width: 6rem;
+    height: 6rem;
+}
+
+.imagen {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.iconos {
+    width: 100px;
+    height: 100px;
+}
+
+/* Estilos para títulos, parágrafos y elementos con texto */
+
+#tituloPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: NeueMachina-Ultrabold;
+    color: #0e0e52;
+}
+
+p {
+    width: 300px;
+}
+
+h3 {
+    font-family: NeueMachina-Light;
+    color: #5686c9;
+}
+
+/* Estilos referentes a secciones de contenido */
+
+#informacionPrincipal,
+#informacionSecundaria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: NeueMachina-Regular;
+    color: black;
+}
+
+#informacionPrincipal {
+    justify-content: space-around;
+}
+
+#informacionSecundaria {
+    justify-content: center;
+
+}
+
+.tarjetaInformacion,
+.tarjetaIconos {
+    justify-items: center;
+    align-content: start;
+    display: grid;
+}
+
+.tarjetaInformacion {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 10px #0e0e52;
+
+}
+
+#dosColumnas {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* Estilos para el área del formulario */
+
+#areaFormulario,
+#imagenSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#areaFormulario {
+    font-family: NeueMachina-Regular;
+}
+
+#areaFormulario p {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#formulario {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: 2rem 2rem auto;
+    margin-top: 5px;
+    margin-bottom: 1rem;
+}
+
+#botonCentrado {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 100px;
+    height: 28px;
+    border-radius: 5px;
+    font-family: NeueMachina-UltraBold;
+}
+
+form label,
+form input,
+textarea {
+    align-self: flex-start;
+    border-radius: 5px;
+}
+
+form input {
+    height: 20.8px;
+}

@@ -84,8 +84,8 @@ a:visited {
 }
 
 .iconos {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
 }
 
 /* Estilos para títulos, parágrafos y elementos con texto */
@@ -100,13 +100,18 @@ a:visited {
     color: #0e0e52;
 }
 
+.tarjetaInformacion h3 a {
+    text-decoration: underline;
+    color: #F1416A;
+}
+
 p {
     width: 300px;
 }
 
 h3 {
     font-family: NeueMachina-Light;
-    color: #5686c9;
+    color: #0126b3;
 }
 
 /* Estilos referentes a secciones de contenido */
@@ -140,7 +145,6 @@ h3 {
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 10px #0e0e52;
-
 }
 
 #dosColumnas {
@@ -198,5 +202,14 @@ textarea {
 form input {
     height: 20.8px;
     font-family: NeueMachina-Regular;
+}
 
+.tarjetaIconos p {
+    font-family: NeueMachina-Ultrabold;
+    font-size: 18px;
+    color: #F1416A;
+    mix-blend-mode: difference;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 350px;
 }

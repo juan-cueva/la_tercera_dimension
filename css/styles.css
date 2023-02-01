@@ -25,10 +25,10 @@
 #grilla {
     height: 100vh;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 5rem auto 40px;
-    grid-template-areas: "header nav" "main main" "footer footer";
     background-image: url(../assets/images/background1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -39,7 +39,18 @@ header {
 nav {
     grid-area: nav;
     font-family: NeueMachina-Ultrabold;
-    color: #5686c9;
+}
+
+.navbar {
+    background-color: transparent !important;
+}
+
+div #navbarNavAltMarkup {
+    justify-content: end;
+}
+
+.navbar .container-fluid{
+    justify-content: end !important;
 }
 
 main {
@@ -55,7 +66,7 @@ footer {
 
 /* Estilos para el menú */
 
-ul {
+/* ul {
     display: flex;
     justify-content: flex-end;
 }
@@ -69,7 +80,7 @@ a:link,
 a:visited {
     text-decoration: none;
     color: white;
-}
+} */
 
 /* Estilos para logo, imágenes e íconos */
 
@@ -81,11 +92,14 @@ a:visited {
 .imagen {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
 }
 
 .iconos {
-    width: 300px;
-    height: 300px;
+    width: auto;
+    height: auto;
 }
 
 /* Estilos para títulos, parágrafos y elementos con texto */
@@ -117,10 +131,9 @@ h3 {
 /* Estilos referentes a secciones de contenido */
 
 #informacionPrincipal,
-#informacionSecundaria {
+.informacionPrincipal--iconos {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     font-family: NeueMachina-Regular;
     color: black;
 }
@@ -129,9 +142,10 @@ h3 {
     justify-content: space-around;
 }
 
-#informacionSecundaria {
+.informacionPrincipal--iconos {
     justify-content: center;
-
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .tarjetaInformacion,
@@ -142,9 +156,12 @@ h3 {
 }
 
 .tarjetaInformacion {
-    background-color: white;
+    padding: 2px, 0px;
     border-radius: 10px;
-    box-shadow: 5px 10px #0e0e52;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
 }
 
 #dosColumnas {
@@ -205,11 +222,52 @@ form input {
 }
 
 .tarjetaIconos p {
-    font-family: NeueMachina-Ultrabold;
     font-size: 18px;
-    color: #F1416A;
+    color: #FFFFFF;
+    text-align: center;
     mix-blend-mode: difference;
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 350px;
+    width: 400px;
+}
+
+.tarjetaIconos {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+}
+
+.redesSociales {
+    mix-blend-mode: difference;
+}
+
+@media screen and (min-width:320px) and (max-width:1200px) {
+    #grilla {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 10% auto 40px;
+        grid-template-areas: "header nav" "main main" "footer footer";
+    }
+
+    .tarjetaIconos,
+    .iconos,
+    .tarjetaIconos p {
+        max-width: 310px;
+    }
+
+    .iconos {
+        width: 30vw;
+    }
+
+    .tarjetaIconos p {
+        width: 80vw;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    #grilla {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 5rem auto 40px;
+        grid-template-areas: "header nav" "main main" "footer footer";
+    }
 }

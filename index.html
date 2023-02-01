@@ -10,6 +10,8 @@
   </title>
   <link rel="icon" type="image/ico" href="./assets/images/favicon.ico">
   <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body id="grilla">
@@ -18,8 +20,7 @@
       <img id="logo" src="./assets/images/ltd.svg" alt="Logo de La Tercera Dimensión" />
     </a>
   </header>
-  <nav>
-    <ul>
+    <!-- <ul>
       <li>
         <a href="./pages/servicios.html">
           Servicios
@@ -40,49 +41,73 @@
           Contáctanos
         </a>
       </li>
-    </ul>
-  </nav>
+    </ul> -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="./pages/servicios.html">Servicios</a>
+            <a class="nav-link" href="./pages/impresoras.html">Impresoras</a>
+            <a class="nav-link" href="./pages/materiales.html">Materiales</a>
+            <a class="nav-link" href="./pages/contactanos.html">Contáctanos</a>
+          </div>
+        </div>
+      </div>
+    </nav>
   <main>
     <section>
-      <article id="informacionSecundaria">
+      <article class="informacionPrincipal--iconos">
         <div class="tarjetaIconos">
           <img class="iconos" src="./assets/images/lightbulb.svg" alt="icono" />
-          <p>¿Tienes una idea? ¿Algún proyecto que quieras materializar? Si lo imaginas nosotros podemos materializarlo. Podemos realizar el diseño 3D e impresión de tu idea.</p>
+          <p>¿Tienes una idea? ¿Algún proyecto que quieras materializar? Si lo imaginas nosotros podemos materializarlo.
+            Podemos realizar el diseño 3D e impresión de tu idea.</p>
         </div>
         <div class="tarjetaIconos">
           <img class="iconos" src="./assets/images/monkey.svg" alt="icono" />
           <p>
-            ¿Se te dañó una pieza de tu maquinaría? Podemos ayudarte, contamos con instrumentos de escaneo 3d para hacer el modelado y la impresión de tus piezas.
+            ¿Se te dañó una pieza de tu maquinaría? Podemos ayudarte, contamos con instrumentos de escaneo 3d para hacer
+            el modelado y la impresión de tus piezas.
           </p>
         </div>
         <div class="tarjetaIconos">
           <img class="iconos" src="./assets/images/printedmonkey.svg" alt="icono" />
           <p>
-            ¿Tienes un proyecto del colegio o la universidad y ya cuentas con un diseño 3D? Nosotros lo imprimimos y al mejor precio.
+            ¿Tienes un proyecto del colegio o la universidad y ya cuentas con un diseño 3D? Nosotros lo imprimimos y al
+            mejor precio.
           </p>
         </div>
         <div class="tarjetaIconos">
           <img class="iconos" src="./assets/images/printer.svg" alt="icono" />
-          <p>La impresión 3D te ofrece la posibilidad de materializar tus ideas, ya sea que cuentes con el conocimiento en diseño 3D o simplemente tengas una idea concreta. Nosotros en la tercera dimensión estamos para ayudarte.</p>
+          <p>La impresión 3D te ofrece la posibilidad de materializar tus ideas, ya sea que cuentes con el conocimiento
+            en diseño 3D o simplemente tengas una idea concreta. Nosotros en la tercera dimensión estamos para ayudarte.
+          </p>
         </div>
         <div class="tarjetaIconos">
           <img class="iconos" src="./assets/images/highfive.svg" alt="icono" />
-          <p>Si te interesa conocer más acerca de la impresión 3D te invitamos a visitar las diferentes secciones en las cuales conoceras nuestros servicios.</p>
+          <p>Si te interesa conocer más acerca de la impresión 3D te invitamos a visitar las diferentes secciones en las
+            cuales conoceras nuestros servicios.</p>
         </div>
       </article>
     </section>
   </main>
   <footer>
     <a href="https://twitter.com">
-      <img src="./assets/images/twitter.svg" alt="Logo de Twitter" />
+      <img class="redesSociales" src="./assets/images/twitter.svg" alt="Logo de Twitter" />
     </a>
     <a href="https://www.instagram.com/">
-      <img src="./assets/images/instagram.svg" alt="Logo de Instagram" />
+      <img class="redesSociales" src="./assets/images/instagram.svg" alt="Logo de Instagram" />
     </a>
     <a href="https://www.facebook.com/">
-      <img src="./assets/images/facebook.svg" alt="Logo de Facebook" />
+      <img class="redesSociales" src="./assets/images/facebook.svg" alt="Logo de Facebook" />
     </a>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

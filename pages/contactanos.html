@@ -8,6 +8,8 @@
   <title>Contáctanos | La Tercera Dimensión</title>
   <link rel="icon" type="image/ico" href="../assets/images/favicon.ico" />
   <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body id="grilla">
@@ -16,29 +18,21 @@
       <img id="logo" src="../assets/images/ltd.svg" alt="Logo de La Tercera Dimensión" />
     </a>
   </header>
-  <nav>
-    <ul>
-      <li>
-        <a href="../pages/servicios.html">
-          Servicios
-        </a>
-      </li>
-      <li>
-        <a href="../pages/impresoras.html">
-          Impresoras
-        </a>
-      </li>
-      <li>
-        <a href="../pages/materiales.html">
-          Materiales
-        </a>
-      </li>
-      <li>
-        <a href="../pages/contactanos.html">
-          Contáctanos
-        </a>
-      </li>
-    </ul>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="../pages/servicios.html">Servicios</a>
+          <a class="nav-link" href="../pages/impresoras.html">Impresoras</a>
+          <a class="nav-link" href="../pages/materiales.html">Materiales</a>
+          <a class="nav-link" href="../pages/contactanos.html">Contáctanos</a>
+        </div>
+      </div>
+    </div>
   </nav>
   <main>
     <h2 id="tituloPrincipal">Contáctanos</h2>
@@ -58,7 +52,10 @@
         </div>
       </div>
       <div id="imagenSide">
-        <img src="../assets/images/placeholder4.jpg" alt="placeholder">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_TFc3DM6wDE" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
     </section>
   </main>
@@ -75,6 +72,9 @@
       </a>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

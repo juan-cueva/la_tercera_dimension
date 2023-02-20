@@ -339,7 +339,10 @@ textarea {
   border-radius: 5px;
 }
 
-.redesSociales:hover {
+.redesSociales a:hover {
+  text-decoration: none;
+}
+.redesSociales :hover {
   animation: agitar 0.55s none infinite;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -370,6 +373,9 @@ textarea {
   .imagen, .tarjetaInformacion .imagen--impresoras, .tarjetaInformacion--sla .imagen--impresoras, .tarjetaInformacion--ancha .imagen--impresoras {
     max-width: 310px;
     width: 30vw;
+  }
+  #dosColumnas {
+    flex-flow: column wrap;
   }
 }
 @media screen and (min-width: 1200px) {

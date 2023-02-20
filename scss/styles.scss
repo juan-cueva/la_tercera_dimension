@@ -288,10 +288,15 @@ textarea {
 	border-radius: 5px;
 }
 
-.redesSociales:hover {
-	@include animacion(agitar, 0.55, none, infinite);
-	margin-left: 10px;
-	margin-bottom: 10px;
+.redesSociales {
+	& a:hover{
+		text-decoration: none;
+	}
+	& :hover {		
+		@include animacion(agitar, 0.55, none, infinite);
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
 }
 
 .navbar-toggler {
@@ -323,6 +328,10 @@ textarea {
 	.imagen{
 		max-width: 310px;
 		width: 30vw;
+	}
+
+	#dosColumnas{
+		flex-flow: column wrap;
 	}
 }
 

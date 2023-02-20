@@ -1,4 +1,3 @@
-/* Fuentes */
 @font-face {
   font-family: NeueMachina-Light;
   src: url(../assets/fonts/NeueMachina-Light.otf);
@@ -11,6 +10,58 @@
   font-family: NeueMachina-Ultrabold;
   src: url(../assets/fonts/NeueMachina-Ultrabold.otf);
 }
+@font-face {
+  font-family: NeueMachina-Light;
+  src: url(../assets/fonts/NeueMachina-Light.otf);
+}
+@font-face {
+  font-family: NeueMachina-Regular;
+  src: url(../assets/fonts/NeueMachina-Regular.otf);
+}
+@font-face {
+  font-family: NeueMachina-Ultrabold;
+  src: url(../assets/fonts/NeueMachina-Ultrabold.otf);
+}
+@keyframes resaltar {
+  50% {
+    transform: scale(0.8);
+  }
+}
+@keyframes agitar {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +70,7 @@
 #grilla {
   height: 100vh;
   display: grid;
-  background-image: url(../assets/images/background1.jpg);
+  background-image: url(../assets/images/background.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -41,11 +92,6 @@ nav .nav-link:hover {
   transform: scale(1.2);
 }
 
-@keyframes resaltar {
-  50% {
-    transform: scale(0.8);
-  }
-}
 .navbar {
   background-color: transparent !important;
 }
@@ -116,10 +162,9 @@ footer {
 
 h3 {
   font-family: NeueMachina-Light;
-  color: #0126b3;
 }
 
-#informacionPrincipal {
+#informacionPrincipal, .informacionPrincipal--iconos {
   display: flex;
   flex-flow: row wrap;
   font-family: NeueMachina-Regular;
@@ -130,18 +175,14 @@ h3 {
 }
 
 .informacionPrincipal--iconos {
-  display: flex;
-  flex-flow: row wrap;
-  font-family: NeueMachina-Regular;
   color: black;
   justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .tarjetaIconos,
-.tarjetaInformacion {
+.tarjetaInformacion,
+.tarjetaInformacion--ancha,
+.tarjetaInformacion--sla {
   justify-items: center;
   align-content: start;
   display: grid;
@@ -152,50 +193,90 @@ h3 {
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
 }
 .tarjetaIconos p,
-.tarjetaInformacion p {
+.tarjetaInformacion p,
+.tarjetaInformacion--ancha p,
+.tarjetaInformacion--sla p {
   font-size: 18px;
   color: #FFFFFF;
-  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
   width: 400px;
 }
-.tarjetaIconos:hover:not(.tarjetaInformacion),
-.tarjetaInformacion:hover:not(.tarjetaInformacion) {
+.tarjetaIconos:hover:not(.tarjetaInformacion):not(.tarjetaInformacion--ancha):not(.tarjetaInformacion--sla),
+.tarjetaInformacion:hover:not(.tarjetaInformacion):not(.tarjetaInformacion--ancha):not(.tarjetaInformacion--sla),
+.tarjetaInformacion--ancha:hover:not(.tarjetaInformacion):not(.tarjetaInformacion--ancha):not(.tarjetaInformacion--sla),
+.tarjetaInformacion--sla:hover:not(.tarjetaInformacion):not(.tarjetaInformacion--ancha):not(.tarjetaInformacion--sla) {
   transform: scale(1.2, 1.2);
   backdrop-filter: blur(5px);
   z-index: 4;
 }
 .tarjetaIconos:hover,
-.tarjetaInformacion:hover {
+.tarjetaInformacion:hover,
+.tarjetaInformacion--ancha:hover,
+.tarjetaInformacion--sla:hover {
   transform: scale(1.1, 1.1);
   background-color: transparent;
+  border: none;
+  box-shadow: none;
   backdrop-filter: none;
   z-index: 4;
 }
 
-.tarjetaInformacion {
-  width: 350px;
-  justify-content: center;
+.tarjetaIconos:hover {
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
-.tarjetaInformacion:hover h3 {
+
+.tarjetaInformacion, .tarjetaInformacion--ancha, .tarjetaInformacion--sla {
+  width: 350px;
+}
+.tarjetaInformacion a, .tarjetaInformacion--ancha a, .tarjetaInformacion--sla a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.tarjetaInformacion a .imagen, .tarjetaInformacion--ancha a .imagen, .tarjetaInformacion--sla a .imagen, .tarjetaInformacion a .imagen--impresoras, .tarjetaInformacion--ancha a .imagen--impresoras, .tarjetaInformacion--sla a .imagen--impresoras {
+  width: 350px;
+  object-fit: contain;
+}
+.tarjetaInformacion a h3, .tarjetaInformacion--ancha a h3, .tarjetaInformacion--sla a h3 {
+  display: inherit;
+  text-align: center;
+  font-family: NeueMachina-Ultrabold;
+}
+.tarjetaInformacion:hover, .tarjetaInformacion--ancha:hover, .tarjetaInformacion--sla:hover {
+  text-decoration: none;
+}
+.tarjetaInformacion:hover h3, .tarjetaInformacion--ancha:hover h3, .tarjetaInformacion--sla:hover h3 {
   color: #f7c444;
   font-family: NeueMachina-Ultrabold;
 }
-.tarjetaInformacion:hover h3 a {
-  text-decoration: underline;
-  color: #F1416A;
-}
-.tarjetaInformacion p {
+.tarjetaInformacion p, .tarjetaInformacion--ancha p, .tarjetaInformacion--sla p {
   width: 350px;
 }
-.tarjetaInformacion .imagen, .tarjetaInformacion .imagen--impresoras {
+.tarjetaInformacion .imagen, .tarjetaInformacion--ancha .imagen, .tarjetaInformacion--sla .imagen, .tarjetaInformacion .imagen--impresoras, .tarjetaInformacion--ancha .imagen--impresoras, .tarjetaInformacion--sla .imagen--impresoras {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width: inherit;
   height: auto;
   object-fit: contain;
 }
-.tarjetaInformacion .imagen--impresoras {
+.tarjetaInformacion .imagen--impresoras, .tarjetaInformacion--ancha .imagen--impresoras, .tarjetaInformacion--sla .imagen--impresoras {
   aspect-ratio: 1.3;
+}
+
+.tarjetaInformacion--sla {
+  width: 614px;
+}
+.tarjetaInformacion--sla p {
+  width: 614px;
+}
+
+.tarjetaInformacion--ancha {
+  width: 450px;
+}
+.tarjetaInformacion--ancha p {
+  width: 450px;
 }
 
 #dosColumnas {
@@ -239,7 +320,7 @@ button {
   width: 100px;
   height: 28px;
   border-radius: 5px;
-  font-family: NeueMachina-UltraBold;
+  font-family: NeueMachina-Ultrabold;
 }
 
 form label {
@@ -259,46 +340,11 @@ textarea {
 }
 
 .redesSociales:hover {
-  animation: shake 0.55s infinite;
+  animation: agitar 0.55s none infinite;
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
 .navbar-toggler {
   height: fit-content;
   width: fit-content;
@@ -310,10 +356,10 @@ textarea {
     grid-template-rows: 10% auto 40px;
     grid-template-areas: "header nav" "main main" "footer footer";
   }
-  .tarjetaIconos, .tarjetaInformacion {
+  .tarjetaIconos, .tarjetaInformacion, .tarjetaInformacion--sla, .tarjetaInformacion--ancha {
     max-width: 310px;
   }
-  .tarjetaIconos p, .tarjetaInformacion p {
+  .tarjetaIconos p, .tarjetaInformacion p, .tarjetaInformacion--sla p, .tarjetaInformacion--ancha p {
     max-width: 310px;
     width: 80vw;
   }
@@ -321,7 +367,7 @@ textarea {
     max-width: 310px;
     width: 30vw;
   }
-  .imagen, .tarjetaInformacion .imagen--impresoras {
+  .imagen, .tarjetaInformacion .imagen--impresoras, .tarjetaInformacion--sla .imagen--impresoras, .tarjetaInformacion--ancha .imagen--impresoras {
     max-width: 310px;
     width: 30vw;
   }

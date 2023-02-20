@@ -1,25 +1,7 @@
 @import "colores";
-$font-family_1: NeueMachina-Ultrabold;
-$font-family_2: NeueMachina-Light;
-$font-family_3: NeueMachina-Regular;
-$font-family_4: NeueMachina-UltraBold;
-$background-color_1: transparent;
-
-/* Fuentes */
-@font-face {
-	font-family: NeueMachina-Light;
-	src: url(../assets/fonts/NeueMachina-Light.otf);
-}
-
-@font-face {
-	font-family: NeueMachina-Regular;
-	src: url(../assets/fonts/NeueMachina-Regular.otf);
-}
-
-@font-face {
-	font-family: NeueMachina-Ultrabold;
-	src: url(../assets/fonts/NeueMachina-Ultrabold.otf);
-}
+@import "fuentes";
+@import "mapas";
+@import "animaciones";
 
 * {
 	margin: 0;
@@ -29,7 +11,7 @@ $background-color_1: transparent;
 #grilla {
 	height: 100vh;
 	display: grid;
-	background-image: url(../assets/images/background1.jpg);
+	background-image: url(../assets/images/background.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -42,24 +24,18 @@ header {
 
 nav {
 	grid-area: nav;
-	font-family: $font-family_1;
+	font-family: $fuente-ultraBold;
 
 	.nav-link:hover {
-		font-size: 16px;
-		color: $color_hover;
-		animation: resaltar 0.3s ease-in-out 1;
-		transform: scale(1.2);
-	}
-}
-
-@keyframes resaltar {
-	50% {
-		transform: scale(0.8);
+		font-size: map-get($links_hover, fuente_t);
+		color: map-get($links_hover, color);
+		@include animacion(resaltar, 0.3, ease-in-out, 1);
+		transform: map-get($links_hover, transformacion);
 	}
 }
 
 .navbar {
-	background-color: $background-color_1 !important;
+	background-color: transparent !important;
 
 	.container-fluid {
 		justify-content: end !important;
@@ -85,7 +61,7 @@ div {
 		& a.nav-link:hover {
 			font-size: 16px;
 			color: $color_hover;
-			animation: resaltar 0.3s ease-in-out 1;
+			@include animacion(resaltar, 0.3, ease-in-out, 1);
 			transform: scale(1.2);
 		}
 	}
@@ -127,19 +103,18 @@ footer {
 	align-items: center;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	font-family: $font-family_1;
+	font-family: $fuente-ultraBold;
 	color: $color_titulos;
 }
 
 h3 {
-	font-family: $font-family_2;
-	color: $color_subtitulos;
+	font-family: $fuente-light;
 }
 
-#informacionPrincipal {
+#informacionPrincipal, .informacionPrincipal--iconos {
 	display: flex;
 	flex-flow: row wrap;
-	font-family: $font-family_3;
+	font-family: $fuente-regular;
 	justify-content: space-around;
 	gap: 10px;
 	margin-top: 10px;
@@ -147,14 +122,8 @@ h3 {
 }
 
 .informacionPrincipal--iconos {
-	display: flex;
-	flex-flow: row wrap;
-	font-family: $font-family_3;
 	color: $color_negro;
 	justify-content: center;
-	gap: 10px;
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 .tarjetaIconos,
@@ -171,7 +140,8 @@ h3 {
 	p {
 		font-size: 18px;
 		color: $color_text;
-		text-align: center;
+		padding-left: 4px;
+		padding-right: 4px;
 		width: 400px;
 	}
 
@@ -184,24 +154,39 @@ h3 {
 	&:hover {
 		transform: scale(1.1, 1.1);
 		background-color: transparent;
+		border: none;
+		box-shadow: none;
 		backdrop-filter: none;
 		z-index: 4;
 	}
 }
 
+.tarjetaIconos:hover{
+	border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
 .tarjetaInformacion {
 	width: 350px;
-	justify-content: center;
-
+	& a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-decoration: none;
+		& .imagen {
+			width: 350px;
+			object-fit: contain;
+		}
+		& h3 {
+			display: inherit;
+			text-align: center;
+			font-family: $fuente-ultraBold;
+		}
+	}
 	&:hover {
+		text-decoration: none;
 		h3 {
 			color: $color_hover;
-			font-family: $font-family_1;
-
-			a {
-				text-decoration: underline;
-				color: $color_contrasteInferior;
-			}
+			font-family: $fuente-ultraBold;
 		}
 	}
 
@@ -223,6 +208,22 @@ h3 {
 	}
 }
 
+.tarjetaInformacion--sla {
+	@extend .tarjetaInformacion;
+	width: 614px;
+	& p {
+		width: 614px;
+	}
+}
+
+.tarjetaInformacion--ancha {
+	@extend .tarjetaInformacion;
+	width: 450px;
+	& p {
+		width: 450px;
+	}
+}
+
 #dosColumnas {
 	height: 80%;
 	display: flex;
@@ -234,7 +235,7 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	font-family: $font-family_3;
+	font-family: $fuente-regular;
 
 	p {
 		margin-top: 4px;
@@ -265,7 +266,7 @@ button {
 	width: 100px;
 	height: 28px;
 	border-radius: 5px;
-	font-family: $font-family_4;
+	font-family: $fuente-ultraBold;
 }
 
 form {
@@ -278,7 +279,7 @@ form {
 		align-self: flex-start;
 		border-radius: 5px;
 		height: 20.8px;
-		font-family: $font-family_3;
+		font-family: $fuente-regular;
 	}
 }
 
@@ -288,55 +289,9 @@ textarea {
 }
 
 .redesSociales:hover {
-	animation: shake 0.55s infinite;
+	@include animacion(agitar, 0.55, none, infinite);
 	margin-left: 10px;
 	margin-bottom: 10px;
-}
-
-@keyframes shake {
-	0% {
-		transform: translate(1px, 1px) rotate(0deg);
-	}
-
-	10% {
-		transform: translate(-1px, -2px) rotate(-1deg);
-	}
-
-	20% {
-		transform: translate(-3px, 0px) rotate(1deg);
-	}
-
-	30% {
-		transform: translate(3px, 2px) rotate(0deg);
-	}
-
-	40% {
-		transform: translate(1px, -1px) rotate(1deg);
-	}
-
-	50% {
-		transform: translate(-1px, 2px) rotate(-1deg);
-	}
-
-	60% {
-		transform: translate(-3px, 1px) rotate(0deg);
-	}
-
-	70% {
-		transform: translate(3px, 1px) rotate(-1deg);
-	}
-
-	80% {
-		transform: translate(-1px, -1px) rotate(1deg);
-	}
-
-	90% {
-		transform: translate(1px, 2px) rotate(0deg);
-	}
-
-	100% {
-		transform: translate(1px, -2px) rotate(-1deg);
-	}
 }
 
 .navbar-toggler {

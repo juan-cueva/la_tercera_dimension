@@ -1,0 +1,9 @@
+@import "colores";
+@import "fuentes";
+
+$links_hover: (
+    color: $color_hover,
+    fuente: $fuente-ultraBold,
+    fuente_t: 16px,
+    transformacion: scale(1.2)
+);
